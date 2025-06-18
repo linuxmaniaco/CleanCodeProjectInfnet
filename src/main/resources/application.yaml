@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: cars
+  datasource:
+    url: jdbc:h2:mem:db  # URL para o banco de dados H2 em mem?ria
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true  # Formata as queries SQL para facilitar a leitura
+  server:
+    port: 8080
