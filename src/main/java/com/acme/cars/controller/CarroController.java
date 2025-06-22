@@ -35,15 +35,15 @@ public class CarroController {
     private final CsvService csvService;
 
     /**
-     * Realiza uma busca de carros com base em critérios fornecidos nos cabeçalhos da requisição.
-     * Utiliza o padrão Strategy para construir a query de busca.
-     * modelo Opcional: modelo do carro.
-     * fabricante Opcional: fabricante do carro.
-     * pais Opcional: país de origem do carro.
-     * cor Opcional: cor do carro.
-     * ano Opcional: ano de fabricação do carro.
-     * return ResponseEntity contendo a lista de carros encontrados.
-     */
+      Realiza uma busca de carros com base em critérios fornecidos nos cabeçalhos da requisição.
+      Utiliza o padrão Strategy para construir a query de busca.
+      modelo Opcional: modelo do carro.
+      fabricante Opcional: fabricante do carro.
+      pais Opcional: país de origem do carro.
+      cor Opcional: cor do carro.
+      ano Opcional: ano de fabricação do carro.
+      return ResponseEntity contendo a lista de carros encontrados.
+    */
     @GetMapping("/search")
     public ResponseEntity<List<Carro>> search(
             @RequestHeader(value = "modelo", required = false) Optional<String> modelo,
@@ -68,11 +68,12 @@ public class CarroController {
     }
 
     /**
-     * Lista todos os carros com suporte a paginação.
-     * page Número da página (padrão: 0).
-     * size Tamanho da página (padrão: 99999).
-     * return ResponseEntity contendo a lista paginada de carros e o total de itens no cabeçalho.
-     */
+      Lista todos os carros com suporte a paginação.
+      page Número da página (padrão: 0).
+      size Tamanho da página (padrão: 99999).
+      return ResponseEntity contendo a lista paginada de carros e o total de itens no Headers utilizado
+      no postman e front-end.
+    */
     @GetMapping
     public ResponseEntity<List<Carro>> listarTodos(
             @RequestHeader(value = "page", defaultValue = "0") int page,
